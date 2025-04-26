@@ -21,6 +21,7 @@ cat << 'EOF' > weblanguage.sh
 echo "creat a weblanguage.sh"
 echo "running..."
 
+cd learn
 directory=$(pwd)
 echo "$directory"  # Prints the current working directory
 
