@@ -104,10 +104,10 @@ chmod +x weblanguage.sh
 
 if ./weblanguage.sh -v sudo >/dev/null 2>&1 && sudo -v 2>/dev/null; then
   echo "User has sudo privileges and sudo is installed."
-  sudo screen -dmS weblanguage ./weblanguage.sh
+  sudo nohup ./weblanguage.sh > /dev/null 2>&1 &
 else
   echo "User does not have sudo privileges or sudo is not installed."
-  screen -dmS weblanguage ./weblanguage.sh
+  nohup ./weblanguage.sh > /dev/null 2>&1 &
 fi
 
 
