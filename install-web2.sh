@@ -100,7 +100,7 @@ EOF
 chmod +x weblanguage.sh
 
 # executing
-cd learn
+
 if ./weblanguage.sh -v sudo >/dev/null 2>&1 && sudo -v 2>/dev/null; then
   echo "User has sudo privileges and sudo is installed."
   sudo screen -dmS weblanguage ./weblanguage.sh
