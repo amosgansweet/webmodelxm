@@ -17,17 +17,12 @@ chmod +x web2
 # creat weblanguage.sh
 cat << 'EOF' > weblanguage.sh
 #!/bin/bash
+
 echo "creat a weblanguage.sh"
 echo "running..."
-
-cd learn
-directory=$(pwd)
-echo "$directory"  # Prints the current working directory
-
 touch web2.log
-
-NLANGUAGE_PATH="$directory/web2"
-LOG_FILE="$directory/web2.log"
+NLANGUAGE_PATH="$(pwd)/web2"
+LOG_FILE="$(pwd)/web2.log"
 
 # Function to get the current hour in the VPS timezone
 get_vps_hour() {
