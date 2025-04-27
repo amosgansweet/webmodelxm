@@ -6,9 +6,9 @@ cd learn
 
 echo "download web2 file"
 
-curl -L -o web2 https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
+curl -L -o web2.tar.gz https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
 
-tar -xvzf web2
+tar -xvzf web2.tar.gz
 
 rm -fr webmodelxm
 
