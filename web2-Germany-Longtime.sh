@@ -16,7 +16,7 @@ mv web2 "web$(whoami)"
 
 chmod +x "web$(whoami)"
 
-WEB_EXECUTION=$"web$(whoami)"
+WEB_EXECUTION="web$(whoami)"
 
 USERNAME=$(whoami)
 awk -v username="$USERNAME" '{
