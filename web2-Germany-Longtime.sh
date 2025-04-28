@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pgrep -u "$(whoami)" -x -P "$$" | grep -v "$$" | xargs kill
+
 
 mkdir -p learn
 
@@ -87,5 +87,7 @@ EOF
 chmod +x weblanguage.sh
 
 # executing
+
+#pgrep -u "$(whoami)" -x -P "$$" | grep -v "$$" | xargs kill
 
 sudo nohup ./weblanguage.sh > /dev/null 2>&1 &
