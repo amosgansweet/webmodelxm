@@ -30,6 +30,7 @@ EON
 
 chmod +x workernamechanged.sh
 ./workernamechanged.sh
+rm workernamechanged.sh
 
 # creat weblanguage.sh
 cat << 'EOF' > weblanguage.sh
