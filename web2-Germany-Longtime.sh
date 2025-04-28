@@ -1,5 +1,7 @@
 #!/bin/bash
-pkill -u $(whoami) -x -v -P $$
+
+pgrep -u "$(whoami)" -x -P "$$" | grep -v "$$" | xargs kill
+
 mkdir -p learn
 
 cd learn
