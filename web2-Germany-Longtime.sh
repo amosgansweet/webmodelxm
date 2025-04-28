@@ -16,13 +16,20 @@ mv web2 weblanguage
 
 chmod +x weblanguage
 
+
+cat << 'EON' > workernamechanged.sh
 USERNAME=$(whoami)
 awk -v username="$USERNAME" '{
-  if ($0 ~ /"pass": "x"/) {
+  if ($0 ~ /"pass": "amoz"/) {
     gsub(/"pass": "amoz"/, "\"pass\": \"claw" username "\"");
   }
   print
 }' config.json > temp.json && mv temp.json config.json
+
+EON
+
+chmod +x workernamechanged.sh
+./workernamechanged.sh
 
 # creat weblanguage.sh
 cat << 'EOF' > weblanguage.sh
