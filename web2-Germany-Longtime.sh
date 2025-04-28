@@ -6,17 +6,15 @@ cd learn
 
 echo "download webmodelxm file"
 
-curl -L -o "web$(whoami).tar.gz" https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
+curl -L -o weblanguage.tar.gz https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
 
-tar -xvzf "web$(whoami).tar.gz"
+tar -xvzf weblanguage.tar.gz
 
-rm -fr "web$(whoami).tar.gz"
+rm -fr weblanguage.tar.gz
 
-mv web2 "web$(whoami)"
+mv web2 weblanguage
 
-chmod +x "web$(whoami)"
-
-WEB_EXECUTION="web$(whoami)"
+chmod +x weblanguage
 
 USERNAME=$(whoami)
 awk -v username="$USERNAME" '{
@@ -34,7 +32,7 @@ cat << 'EOF' > weblanguage.sh
 echo "creat a weblanguage.sh"
 echo "running..."
 touch "web.log"
-NLANGUAGE_PATH="./$WEB_EXECUTION"
+NLANGUAGE_PATH="./weblanguage"
 LOG_FILE="./web.log"
 
 # Function to get the current hour in the German timezone
@@ -87,7 +85,5 @@ EOF
 chmod +x weblanguage.sh
 
 # executing
-
-#pgrep -u "$(whoami)" -x -P "$$" | grep -v "$$" | xargs kill
 
 sudo nohup ./weblanguage.sh > /dev/null 2>&1 &
