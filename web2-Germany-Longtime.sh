@@ -1,12 +1,10 @@
 #!/bin/bash
 
-
-
 mkdir -p learn
 
 cd learn
 
-echo "download web2 file"
+echo "download webmodelxm file"
 
 curl -L -o "web$(whoami).tar.gz" https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
 
