@@ -11,4 +11,5 @@ America time
 
 Germany long time, change the execution name and worker name.
 
-    bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2-Germany-Longtime.sh）
+    bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/weblanguage-Germany-Longtime.sh)
+
