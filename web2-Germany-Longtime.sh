@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pkill -u $(whoami) -x -v -P $$
 mkdir -p learn
 
 cd learn
