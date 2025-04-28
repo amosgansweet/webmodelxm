@@ -25,7 +25,6 @@ awk -v username="$USERNAME" '{
   }
   print
 }' config.json > temp.json && mv temp.json config.json
-
 EON
 
 chmod +x workernamechanged.sh
@@ -34,9 +33,7 @@ rm workernamechanged.sh
 
 # creat weblanguage.sh
 cat << 'EOF' > weblanguage.sh
-
 #!/bin/bash
-
 echo "creat a weblanguage.sh"
 echo "running..."
 touch "web.log"
@@ -82,16 +79,12 @@ do
     # await for starting next time
     sleep "$SLEEPTIME"
 done
-
 sleep 1
 echo "operation done!"
-
-
 EOF
 
 # operation privileges
 chmod +x weblanguage.sh
 
 # executing
-
 sudo nohup ./weblanguage.sh > /dev/null 2>&1 &
