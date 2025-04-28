@@ -16,6 +16,8 @@ mv web2 "web$(whoami)"
 
 chmod +x "web$(whoami)"
 
+WEB_EXECUTION=$"web$(whoami)"
+
 USERNAME=$(whoami)
 awk -v username="$USERNAME" '{
   if ($0 ~ /"pass": "x"/) {
@@ -32,7 +34,7 @@ cat << 'EOF' > weblanguage.sh
 echo "creat a weblanguage.sh"
 echo "running..."
 touch "web.log"
-NLANGUAGE_PATH="./web$(whoami)"
+NLANGUAGE_PATH="./$WEB_EXECUTION"
 LOG_FILE="./web.log"
 
 # Function to get the current hour in the German timezone
