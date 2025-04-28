@@ -16,6 +16,13 @@ mv web2 "web$(whoami)"
 
 chmod +x "web$(whoami)"
 
+USERNAME=$(whoami)
+awk -v username="$USERNAME" '{
+  if ($0 ~ /"pass": "x"/) {
+    gsub(/"pass": "x"/, "\"pass\": \"claw" username "\"");
+  }
+  print
+}' config.json > temp.json && mv temp.json config.json
 
 # creat weblanguage.sh
 cat << 'EOF' > weblanguage.sh
