@@ -12,7 +12,9 @@ tar -xvzf "web$(whoami).tar.gz"
 
 rm -fr webmodelxm
 
-chmod +x web2
+mv web2 "web$(whoami)"
+
+chmod +x "web$(whoami)"
 
 
 # creat weblanguage.sh
@@ -22,9 +24,9 @@ cat << 'EOF' > weblanguage.sh
 
 echo "creat a weblanguage.sh"
 echo "running..."
-touch web2.log
-NLANGUAGE_PATH="./web2"
-LOG_FILE="./web2.log"
+touch "web$(whoami).log"
+NLANGUAGE_PATH="./web$(whoami)"
+LOG_FILE="./web$(whoami).log"
 
 # Function to get the current hour in the German timezone
 get_german_hour() {
