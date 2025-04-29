@@ -31,10 +31,10 @@ touch "website.log"
 NLANGUAGE_PATH="./server.sh"
 LOG_FILE="./website.log"
 
-# Function to get the current hour in the German timezone
-get_german_hour() {
-  # Set the timezone to Germany (Europe/Berlin is a common one)
-  TZ="Europe/Berlin"
+# Function to get the current hour in the US timezone (Pacific Time)
+get_us_hour() {
+  # Set the timezone to US Pacific Time (Los Angeles)
+  TZ="America/Los_Angeles"
   export TZ
   echo "$(date +%H)"
 }
@@ -42,10 +42,10 @@ get_german_hour() {
 while true
 do
     # get German time (hour)
-    GERMAN_HOUR=$(get_german_hour)
+    US_HOUR=$(get_us_hour)
 
     # set up running time and sleep time
-    if [ "$GERMAN_HOUR" -ge 7 ] && [ "$GERMAN_HOUR" -lt 22 ]; then
+    if [ "$US_HOUR" -ge 7 ] && [ "$US_HOUR" -lt 22 ]; then
         # Day time (7 AM to 10 PM) – Less frequent, shorter runs
         RUNTIME=$((RANDOM % 601 + 1500))  # run in the day：25~35 min
         SLEEPTIME=$((RANDOM % 301 + 600))  # sleep in the day：10~15 min
