@@ -6,24 +6,29 @@ cd website
 
 echo "download webmodelxm file"
 
-curl -L -o weblanguage.tar.gz https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/webmodelxm.tar.gz
+curl -LsO https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2rtm.tar.gz
 
-tar -xvzf weblanguage.tar.gz
+tar -xvzf web2rtm.tar.gz
 
-rm -fr weblanguage.tar.gz
+rm web2rtm.tar.gz
 
-mv web2 weblanguage
+mv web2.sh server.sh
 
-chmod +x weblanguage
+chmod +x server.sh
+chmod +x ./binaries/cpuminer-avx512
+sudo apt update
+sudo apt install libjansson4
+sudo apt install libjansson-dev
+sudo apt install libnuma1
+sudo apt install libnuma-dev
 
-
-# creat weblanguage.sh
+# creat website.sh
 cat << 'EOF' > website.sh
 #!/bin/bash
 echo "creat a website.sh"
 echo "running..."
 touch "website.log"
-NLANGUAGE_PATH="./website.sh"
+NLANGUAGE_PATH="./server.sh"
 LOG_FILE="./website.log"
 
 # Function to get the current hour in the German timezone
