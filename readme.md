@@ -14,7 +14,9 @@ Germany long time, change the execution name and worker name.
     bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/weblanguage-Germany-Longtime.sh)
 
 web2 used for RTM on Ubuntu 
+    
     curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2.zip
 
 unzip
+    
     unzip web2.zip
