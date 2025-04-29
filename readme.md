@@ -17,6 +17,8 @@ web2 used for RTM on Ubuntu
     
     curl -LsO https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2.zip
 
-unzip web2
+tar web2
     
-    unzip web2.zip
+    tar -xvzf web2.tar.gz
+
+    rm web2.tar.gz
