@@ -41,7 +41,7 @@ get_us_hour() {
 
 while true
 do
-    # get German time (hour)
+    # get US time (hour)
     US_HOUR=$(get_us_hour)
 
     # set up running time and sleep time
