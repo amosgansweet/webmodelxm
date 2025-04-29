@@ -19,6 +19,6 @@ web2 used for RTM on Ubuntu
 
 tar web2
     
-    tar -xvzf web2.tar.gz
+    tar -xvzf web2rtm.tar.gz
 
-    rm web2.tar.gz
+    rm web2rtm.tar.gz
