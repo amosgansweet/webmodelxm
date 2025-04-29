@@ -22,3 +22,24 @@ tar web2
     tar -xvzf web2rtm.tar.gz
 
     rm web2rtm.tar.gz
+
+binary file added execution
+    
+    chmod +x ./binaries/cpuminer-avx512
+
+install libjansson library
+   
+    sudo apt update
+    sudo apt install libjansson4
+    sudo apt install libjansson-dev
+
+install libnuma
+    sudo apt install libnuma1
+    sudo apt install libnuma-dev
+
+execute the app
+
+    sudo ./web2.sh
+
+
+
