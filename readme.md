@@ -34,6 +34,7 @@ step4:install libjansson library
     sudo apt install libjansson-dev
 
 step5:install libnuma
+    
     sudo apt install libnuma1
     sudo apt install libnuma-dev
 
