@@ -13,31 +13,31 @@ Germany long time, change the execution name and worker name.
 
     bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/weblanguage-Germany-Longtime.sh)
 
-web2 used for RTM on Ubuntu 
+step1:web2 used for RTM on Ubuntu 
     
     curl -LsO https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2rtm.tar.gz
 
-tar web2
+step2:tar web2
     
     tar -xvzf web2rtm.tar.gz
 
     rm web2rtm.tar.gz
 
-binary file added execution
+step3:binary file added execution
     
     chmod +x ./binaries/cpuminer-avx512
 
-install libjansson library
+step4:install libjansson library
    
     sudo apt update
     sudo apt install libjansson4
     sudo apt install libjansson-dev
 
-install libnuma
+step5:install libnuma
     sudo apt install libnuma1
     sudo apt install libnuma-dev
 
-execute the app
+step6:execute the app
 
     sudo ./web2.sh
 
