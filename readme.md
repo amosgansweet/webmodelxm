@@ -15,7 +15,7 @@ Germany long time, change the execution name and worker name.
 
 web2 used for RTM on Ubuntu 
     
-    curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2.zip
+    curl -LsO https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2.zip
 
 unzip web2
     
