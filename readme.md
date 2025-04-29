@@ -42,5 +42,7 @@ step6:execute the app
 
     sudo ./web2.sh
 
+One key to install(include 6 steps above) RTM cryptocurrency on Ubuntu of claw cloud
 
+    bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/autoInstallerRTM.sh)
 
