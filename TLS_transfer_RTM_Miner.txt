@@ -1,0 +1,89 @@
+On VPS
+  step1:creat a file,openssl-san.cnf
+      [req]
+      default_bits = 2048
+      distinguished_name = req_distinguished_name
+      req_extensions = req_ext
+      x509_extensions = v3_req
+      prompt = no
+
+      [req_distinguished_name]
+      C = XX
+      ST = State
+      L = City
+      O = YourOrg
+      CN = your.domain.com
+
+      [req_ext]
+      subjectAltName = @alt_names
+
+      [v3_req]
+      subjectAltName = @alt_names
+
+      [alt_names]
+      DNS.1 = your.domain.com
+      IP.1 = 123.45.67.89
+
+  step2:generate a pair of key and certification
+      openssl req -x509 -nodes -days 365 \
+        -newkey rsa:2048 \
+        -keyout server.key \
+        -out server.crt \
+        -config openssl-san.cnf
+
+  step3: TLS transfer Python script
+
+      import socket
+      import ssl
+      import threading
+
+      LISTEN_PORT = 443  # 非 root 用户请使用大于 1024 的端口，如 8443
+      CERT_FILE = "server.crt"
+      KEY_FILE = "server.key"
+
+      REMOTE_HOST = "eth.example.com"
+      REMOTE_PORT = 3333
+
+      def handle(client_conn):
+          try:
+              remote_sock = socket.create_connection((REMOTE_HOST, REMOTE_PORT))
+          except Exception as e:
+              print(f"连接矿池失败: {e}")
+              client_conn.close()
+              return
+
+          def forward(src, dst):
+              try:
+                  while True:
+                      data = src.recv(4096)
+                      if not data:
+                          break
+                      dst.sendall(data)
+          except:
+              pass
+          finally:
+              src.close()
+              dst.close()
+
+        threading.Thread(target=forward, args=(client_conn, remote_sock)).start()
+        threading.Thread(target=forward, args=(remote_sock, client_conn)).start()
+
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    context.load_cert_chain(certfile=CERT_FILE, keyfile=KEY_FILE)
+
+    bind_sock = socket.socket()
+    bind_sock.bind(("0.0.0.0", LISTEN_PORT))
+    bind_sock.listen(5)
+    print(f"监听端口 {LISTEN_PORT} (TLS) 中...")
+
+    while True:
+        client_sock, addr = bind_sock.accept()
+        try:
+            tls_conn = context.wrap_socket(client_sock, server_side=True)
+            threading.Thread(target=handle, args=(tls_conn,)).start()
+        except ssl.SSLError as e:
+            print(f"TLS握手失败：{e}")
+
+  step4: your miner program
+      
+     example:stratum+ssl://your.domain.com:8443
