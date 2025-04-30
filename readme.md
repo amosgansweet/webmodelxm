@@ -1,6 +1,6 @@
 used for webmodelxm to try and command
 
-
+------------------------------------------------RTM--------------------------------------------------------------------------------------
 Germany time
                     
     bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/install-web2.sh)
@@ -13,6 +13,7 @@ Germany long time, change the execution name and worker name.
 
     bash <(curl -Ls https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/weblanguage-Germany-Longtime.sh)
 
+-------------------------------------------------RTM------------------------------------------------------------------------------------------
 step1:web2 used for RTM on Ubuntu 
     
     curl -LsO https://raw.githubusercontent.com/amosgansweet/webmodelxm/main/web2rtm.tar.gz
@@ -39,6 +40,10 @@ step5:install libnuma
     sudo apt install libnuma-dev
 
 step6:execute the app
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
     sudo ./web2.sh
 
