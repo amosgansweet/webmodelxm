@@ -1,3 +1,8 @@
+Note: webmodelxm.tar.gz is used for XMR
+      web2rtm.tar.gz is used for RTM
+
+
+
 used for webmodelxm to try and command
 
 ------------------------------------------------RTM--------------------------------------------------------------------------------------
