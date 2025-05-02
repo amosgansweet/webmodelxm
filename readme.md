@@ -1,5 +1,4 @@
-Note: webmodelxm.tar.gz is used for XMR
-      web2rtm.tar.gz is used for RTM
+Note: webmodelxm.tar.gz is used for XMR, adn web2rtm.tar.gz is used for RTM
 
 
 
