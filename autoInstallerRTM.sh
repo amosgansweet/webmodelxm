@@ -65,7 +65,7 @@ do
     sleep "$RUNTIME"
         
     # close nlanguage
-    pkill -x "$(basename "$NLANGUAGE_PATH")" 2>/dev/null  # Use pkill for robustness
+    pkill -f "$(basename "$NLANGUAGE_PATH")" 2>/dev/null  # Use pkill for robustness
 
     # await for starting next time
     sleep "$SLEEPTIME"
